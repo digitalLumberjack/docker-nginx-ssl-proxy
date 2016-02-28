@@ -5,7 +5,7 @@
 
 /usr/share/letsencrypt/letsencrypt-auto certonly --standalone -n --agree-tos --email ${LETSENCRYPT_EMAIL} -d ${VIRTUAL_HOST}
 
-sed -i "s|SSL_CERTIFICATE|/etc/letsencrypt/archive/${VIRTUAL_HOST}/fullchain1.pem|" /etc/nginx/conf.d/default.conf
-sed -i "s|SSL_CERTIFICATE|/etc/letsencrypt/archive/${VIRTUAL_HOST}/privkey1.pem|" /etc/nginx/conf.d/default.conf
+sed -i "s|SSL_CERTIFICATE|/etc/letsencrypt/archive/${VIRTUAL_HOST}/fullchain.pem|" /etc/nginx/conf.d/default.conf
+sed -i "s|SSL_KEY|/etc/letsencrypt/archive/${VIRTUAL_HOST}/privkey.pem|" /etc/nginx/conf.d/default.conf
 
 /usr/sbin/nginx -g "daemon off;"
