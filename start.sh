@@ -4,7 +4,7 @@
 [ ! -z "${APP_PORT}" ] && sed -i "s/APP_PORT/${APP_PORT}/" /etc/nginx/conf.d/default.conf
 
 if [[ ! -f "/etc/letsencrypt/live/${VIRTUAL_HOST}/fullchain.pem" ]];then 
-  /usr/share/letsencrypt/letsencrypt-auto certonly --standalone -n --agree-tos --email ${LETSENCRYPT_EMAIL} -d ${VIRTUAL_HOST}
+  /usr/share/letsencrypt/letsencrypt-auto certonly --standalone -n --agree-tos $([[ "${LETSENCRYPT_ENV}" == "staging" ]] && echo "--staging") --email ${LETSENCRYPT_EMAIL} -d ${VIRTUAL_HOST}
 fi
 
 sed -i "s|SSL_CERTIFICATE|/etc/letsencrypt/live/${VIRTUAL_HOST}/fullchain.pem|" /etc/nginx/conf.d/default.conf

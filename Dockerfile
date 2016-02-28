@@ -5,6 +5,7 @@ ENV APP_PORT 9000
 ENV APP_HOST localhost
 ENV VIRTUAL_HOST localhost
 ENV LETSENCRYPT_EMAIL replaceme@gmail.com
+ENV LETSENCRYPT_ENV staging
 
 RUN apt-get -y update
 RUN apt-get -y install git
