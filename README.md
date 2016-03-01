@@ -9,3 +9,5 @@ Use the following ENV when running :
 - ENV VIRTUAL_HOST : your domain name (the dns must be redirected to your container for letsencrypt to validate the certificate
 - ENV LETSENCRYPT_EMAIL : your email account on letencrypt 
 - ENV LETSENCRYPT_ENV : prod for production, staging for testing purpose (ssl certifcates will not be valid)
+
+Run with a docker-compose or directly by linking the application container in command line.
