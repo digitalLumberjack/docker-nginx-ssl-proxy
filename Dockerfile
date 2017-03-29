@@ -1,5 +1,5 @@
-FROM nginx:1.9.9
-MAINTAINER DigitalLumberjack <digitallumberjack@gmail.com>
+FROM nginx:1.11.12
+MAINTAINER digitalLumberjack <digitallumberjack@gmail.com>
 
 ENV APP_PORT 9000
 ENV APP_HOST localhost
